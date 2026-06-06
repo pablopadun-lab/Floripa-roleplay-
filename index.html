@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floripa City Roleplay - Calculadora Mecânica</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#12051f,#2b0d4d,#180726);
+    min-height:100vh;
+    color:#fff;
+    padding:30px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    font-size:3rem;
+    color:#b66dff;
+    margin-bottom:5px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:30px;
+    letter-spacing:5px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    border-radius:15px;
+    padding:20px;
+}
+
+.item{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+select{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+}
+
+.total{
+    margin-top:25px;
+    text-align:center;
+    font-size:2rem;
+    font-weight:bold;
+    color:#c58cff;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#a855f7;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#9333ea;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>FLORIPA CITY ROLEPLAY</h1>
+<h2>TABELA MECÂNICA</h2>
+
+<div class="card">
+
+<div class="item">
+<label>Turbo</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="50000">Nível 1 - 50K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Transmissão</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="60000">Nível 1 - 60K</option>
+<option value="80000">Nível 2 - 80K</option>
+<option value="100000">Nível 3 - 100K</option>
+<option value="100000">Nível 4 - 100K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Freio</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="20000">Nível 1 - 20K</option>
+<option value="60000">Nível 2 - 60K</option>
+<option value="80000">Nível 3 - 80K</option>
+<option value="80000">Nível 4 - 80K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Motor</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="20000">Nível 1 - 20K</option>
+<option value="40000">Nível 2 - 40K</option>
+<option value="80000">Nível 3 - 80K</option>
+<option value="80000">Nível 4 - 80K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Suspensão</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="20000">Nível 1 - 20K</option>
+<option value="40000">Nível 2 - 40K</option>
+<option value="80000">Nível 3 - 80K</option>
+<option value="100000">Nível 4 - 100K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Blindagem</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="600000">600K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Pneu Blindado</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="900000">900K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Full Tuning</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="350000">350K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Neon/Xenon</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="25000">25K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Cor Neon/Xenon</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="15000">15K</option>
+</select>
+</div>
+
+<button onclick="calcular()">Calcular Total</button>
+
+<div class="total" id="resultado">
+Total: R$ 0
+</div>
+
+</div>
+</div>
+
+<script>
+function calcular(){
+    let total = 0;
+
+    document.querySelectorAll('.valor').forEach(item=>{
+        total += Number(item.value);
+    });
+
+    document.getElementById('resultado').innerHTML =
+        "Total: R$ " + total.toLocaleString('pt-BR');
+}
+</script>
+
+</body>
+</html>
